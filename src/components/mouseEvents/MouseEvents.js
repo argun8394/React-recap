@@ -14,6 +14,13 @@ const MouseEvents = () => {
    * mouseMove
    */
   // click event
+  const handleClick=(event) => {
+    console.log({eventType:event.type,id:event.target.id});
+  }
+
+  function handleDoubleClick(e) {
+    alert(e.target.id);
+  }
 
   //mouseMove
   const handleMouseMove =(e)=>{
@@ -34,10 +41,10 @@ const MouseEvents = () => {
         <li id="todo-1" onMouseMove={handleMouseMove} >
           todo item 1 <span>X</span>
         </li>
-        <li id="todo-2 "  >
+        <li id="todo-2 " onClick={handleClick} >
           todo item 2 <span>X</span>
         </li>
-        <li id="todo-3" >
+        <li id="todo-3" onDoubleClick={handleDoubleClick} >
           todo item 3 <span>X</span>
         </li>
         <li>
